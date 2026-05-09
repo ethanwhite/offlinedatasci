@@ -42,7 +42,7 @@ dependencies = [
   'beautifulsoup4',
   'importlib_resources',
   'lxml',
-  'pip3',
+  'pip',
   'python-pypi-mirror>=5.2.1',
   'requests',
   'setuptools'
