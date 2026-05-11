@@ -57,13 +57,13 @@ On macOS make sure wheel package is installed first.
 ### Download and setup everything
 
 ```sh
-offlinedatasci install all /install/path
+offlinedatasci install all <path>
 ```
 
 ### Create just the local CRAN mirror with basic data science packages
 
 ```sh
-offlinedatasci install minicran /install/path
+offlinedatasci install r-packages <path>
 ```
 
 ### Add packages to repository mirrors:
@@ -75,7 +75,7 @@ The path should be the same as where the mirror was originally setup, so the sam
 For example, to add the `sf`, `terra`, and `stars` geospatial packages to the CRAN mirror: 
 
 ```sh
-offlinedatasci add-packages r sf terra stars /install/path
+offlinedatasci add r-packages package1 package2 ... <path>
 ```
 
 ## Developer docs
