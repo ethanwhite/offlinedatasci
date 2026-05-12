@@ -1,3 +1,6 @@
+[![PyPI version](https://img.shields.io/pypi/v/offlinedatasci.svg)](https://pypi.python.org/pypi/offlinedatasci/)
+[![Python versions supported](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/github/license/carpentriesoffline/offlinedatasci.svg)](https://github.com/carpentriesoffline/offlinedatasci/blob/main/LICENSE)
 [![Build Check](https://github.com/carpentriesoffline/offlinedatasci/actions/workflows/package-check.yml/badge.svg)](https://github.com/carpentriesoffline/offlinedatasci/actions/workflows/package-check.yml)
 [![Documentation Status](https://readthedocs.org/projects/offlinedatasci/badge/?version=latest)](https://offlinedatasci.readthedocs.io/en/latest/?badge=latest)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/offlinedatasci)
@@ -18,23 +21,31 @@ Early stage experiment
 
 ## Installation
 
-### Using pip:
+### Install the CLI (using pipx):
 
-```sh
-pip install offlinedatasci
-```
-
-### Using pipx:
-
-To install just the command line interface (CLI) we recommend [pipx](https://pipx.pypa.io/). [Install pipx](https://pipx.pypa.io/stable/installation/) and then run:
+We recomend that most users install the command line interface (CLI) using [pipx](https://pipx.pypa.io/).
+This will produce an isolated installation than can be run using the CLI.
+First, [install pipx](https://pipx.pypa.io/stable/installation/) and then run:
 
 ```sh
 pipx install offlinedatasci
 ```
 
+### Using pip:
+
+To install the package into the current Python environment using pip:
+
+```sh
+pip install offlinedatasci
+```
+
 ### Installing development versions
 
+If you need functionality that has been implemented but not released yet you can install the development version.
+
 #### Directly From GitHub
+
+To install directly from GitHub without have a local copy of the code to edit:
 
 ```sh
 pip install git+https://git@github.com/carpentriesoffline/offlinedatasci.git
@@ -42,7 +53,7 @@ pip install git+https://git@github.com/carpentriesoffline/offlinedatasci.git
 
 #### Locally
 
-Clone the repository and from the root directory run:
+To download and then install the code (which provides a local copy of the code to edit), first clone the repository and then from the root directory run:
 
 ```sh
 git clone https://github.com/carpentriesoffline/offlinedatasci.git
@@ -56,14 +67,18 @@ On macOS make sure wheel package is installed first.
 
 ### Download and setup everything
 
+Download and install everything (~2 GB):
+
 ```sh
-offlinedatasci install all /install/path
+offlinedatasci install all <path>
 ```
 
-### Create just the local CRAN mirror with basic data science packages
+### Create a local CRAN mirror
+
+Create just the local CRAN mirror with basic data science packages (~0.5 GB):
 
 ```sh
-offlinedatasci install minicran /install/path
+offlinedatasci install r-packages <path>
 ```
 
 ### Add packages to repository mirrors:
@@ -75,7 +90,7 @@ The path should be the same as where the mirror was originally setup, so the sam
 For example, to add the `sf`, `terra`, and `stars` geospatial packages to the CRAN mirror: 
 
 ```sh
-offlinedatasci add-packages r sf terra stars /install/path
+offlinedatasci add r-packages package1 package2 ... <path>
 ```
 
 ## Developer docs

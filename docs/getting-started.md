@@ -45,11 +45,11 @@ By default offlinedatasci creates local package mirrors of the most common data 
 You can add additional packages yourself using `add-packages`, then language `r` or `python`, and the name of the packages to install:
 
 ```sh
-offlinedatasci add r-packages package1 package2 ... <path>`
+offlinedatasci add r-packages package1 package2 ... <path>
 ```
 
 ```sh
-offlinedatasci add python-packages package1 package2 ... <path>`
+offlinedatasci add python-packages package1 package2 ... <path>
 ```
 
 ## Python interface
