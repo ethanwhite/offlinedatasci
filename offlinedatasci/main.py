@@ -190,14 +190,16 @@ def download_rstudio(ods_dir):
     destination_path = Path(Path(ods_dir), Path("rstudio"))
     if not os.path.isdir(destination_path):
         os.makedirs(destination_path)
-    fp = requests.get(baseurl)
-    web_content = fp.content
-    soup = bs.BeautifulSoup(web_content, 'lxml')
-    links = soup.find_all('a')
-    for link in links:
-        if link.has_attr('href') and (".exe" in link['href'] or ".dmg" in link['href']):
-            url = str(link['href'])
-            download_and_save_installer(url, Path(Path(destination_path), Path(os.path.basename(url))))
+    raw_version = requests.get('https://download1.rstudio.org/current.ver').text.strip()
+    # raw_version looks like "2026.04.0+526.pro2"; URL slug uses "-" instead of "+" with no ".pro*" suffix
+    version = re.sub(r'\.pro\d+$', '', raw_version).replace('+', '-')
+    baseurl = 'https://download1.rstudio.org/electron'
+    urls = [
+        f"{baseurl}/windows/RStudio-{version}.exe",
+        f"{baseurl}/macos/RStudio-{version}.dmg",
+    ]
+    for url in urls:
+        download_and_save_installer(url, Path(destination_path, os.path.basename(url)))
 
 def download_python(ods_dir):
     """Download Python installers
