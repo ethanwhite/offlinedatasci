@@ -260,7 +260,7 @@ def download_r_macosx(r_current_version, ods_dir):
     ods_dir -- Directory to save R installers
     """
     baseurl = "https://cloud.r-project.org/bin/macosx/"
-    download_path_arm64 = baseurl + "big-sur-arm64/base/" + r_current_version + "-arm64.pkg"
+    download_path_arm64 = baseurl + "sonoma-arm64/base/" + r_current_version + "-arm64.pkg"
     destination_path_arm64 = Path(Path(ods_dir), Path("R"), Path(r_current_version + "-arm64.pkg"))
     if not os.path.exists(destination_path_arm64):
         print("****Downloading file: ", destination_path_arm64)
